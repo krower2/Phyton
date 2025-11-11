@@ -1,18 +1,32 @@
-from question_model import Questions
-from data import question_data
-from quiz_brain import QuizBrain
-question_bank = []
-
-for question in question_data:
-    question_text = question["text"]
-    question_answer = question["answer"]
-    new_question = Questions(question_text,question_answer)
-    question_bank.append(new_question)
+from turtle import Turtle, Screen
+import heroes
 
 
-quiz = QuizBrain(question_bank)
+tinny_the_turtle = Turtle()
+tinny_the_turtle.shape("arrow")
+tinny_the_turtle.color("red")
+def triangle ():
+    tinny_the_turtle.forward(100)
+    tinny_the_turtle.left(120)
+    tinny_the_turtle.forward(100)
+    tinny_the_turtle.left(120)
+    tinny_the_turtle.forward(100)
 
-while quiz.still_has_questions():
-    quiz.next_question()
-print("You've completed the quiz.")
-print(f"Your final score was: {quiz.score}/ {quiz.question_number}")
+def square():
+    for i in range(4):
+        tinny_the_turtle.forward(100)
+        tinny_the_turtle.left(90)
+
+def dashed_line():
+    for i in range(7):
+        tinny_the_turtle.forward(10)
+        tinny_the_turtle.penup()
+        tinny_the_turtle.forward(10)
+        tinny_the_turtle.pendown()
+
+triangle()
+square()
+
+screen = Screen()
+screen.exitonclick()
+
